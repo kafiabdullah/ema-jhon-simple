@@ -16,6 +16,7 @@ function Product(props) {
                 <p><small>by: {seller}</small></p>
                 <p>Price: ${price}</p>
                 <p><small>Only {stock} left in stock-Order soon</small></p>
+                <button className="buy-btn"> add to cart</button>
 
             </div>
         </div>
