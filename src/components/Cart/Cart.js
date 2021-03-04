@@ -25,11 +25,17 @@ const Cart = (props) => {
     }
     let tax = (totalPrice / 10).toFixed(2);
     let grandTotal = (totalPrice + shipping + Number(tax)).toFixed(2);
+
+    const formatNumber = num => {
+        const precision = num.toFixed(2);
+        return Number(precision)
+
+    }
     return (
         <div className="cart-details">
             <h2>Order Summary</h2>
             <h4>Items Ordered: {cart.length}</h4>
-            <p>Item Cost: {totalPrice}</p>
+            <p>Item Cost: {formatNumber(totalPrice)}</p>
             <p>Shipping Cost:   {shipping} </p>
             <p>Tax + VAT: {tax}</p>
             <h5>Total Price:    {grandTotal}</h5>
