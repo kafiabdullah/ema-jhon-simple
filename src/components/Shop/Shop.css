@@ -2,12 +2,12 @@
     display: flex;
 }
 .product-container{
-    width: 70%;
+    width: 75%;
     border-right: 1px solid black;
     margin-right: 5px;
     margin-left: 20px;
     
 }
 .cart-container{
-    width: 30%;
+    width: 25%;
 }

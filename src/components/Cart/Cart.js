@@ -17,11 +17,12 @@ const Cart = (props) => {
     if (totalPrice > 35) {
         shipping = 0;
     }
-    else if (totalPrice > 15) {
-        shipping = 4.99;
-    }
+
     else if(totalPrice > 0){
         shipping = 12.99;
+    }
+    else if (totalPrice > 15) {
+        shipping = 4.99;
     }
     let tax = (totalPrice / 10).toFixed(2);
     let grandTotal = (totalPrice + shipping + Number(tax)).toFixed(2);
