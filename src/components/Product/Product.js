@@ -5,8 +5,8 @@ import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 function Product(props) {
-    console.log(props.product);
-    const { img, name, seller, price, stock , key} = props.product;
+    console.log(props);
+    const { img, name, seller, price, stock, key } = props.product;
     return (
         <div className="product">
 
@@ -20,8 +20,9 @@ function Product(props) {
                 <p><small>by: {seller}</small></p>
                 <p>Price: ${price}</p>
                 <p><small>Only {stock} left in stock-Order soon</small></p>
-                <button onClick={() => props.handleAddProduct(props.product)} 
-                className="buy-btn"> <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>
+                {/* add react condition render to hide button on productDetails component */}
+                {props.showAddToCart && <button onClick={() => props.handleAddProduct(props.product)}
+                    className="buy-btn"> <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>}
 
             </div>
         </div>

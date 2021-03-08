@@ -12,7 +12,7 @@ const ProductDetail = () => {
         <div className="container">
             <h2>{productKey} Details Comming Soon....</h2>
             {/* add product details form product component */}
-            <Product product={product}></Product>
+            <Product showAddToCart={false} product={product}></Product>
         </div>
     );
 };
