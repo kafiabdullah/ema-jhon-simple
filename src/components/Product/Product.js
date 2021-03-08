@@ -21,7 +21,7 @@ function Product(props) {
                 <p>Price: ${price}</p>
                 <p><small>Only {stock} left in stock-Order soon</small></p>
                 {/* add react condition render to hide button on productDetails component */}
-                {props.showAddToCart && <button onClick={() => props.handleAddProduct(props.product)}
+                {props.showAddToCart === true && <button onClick={() => props.handleAddProduct(props.product)}
                     className="buy-btn"> <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>}
 
             </div>
