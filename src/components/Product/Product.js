@@ -2,10 +2,11 @@ import React from 'react';
 import './Product.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Product(props) {
     console.log(props.product);
-    const { img, name, seller, price, stock } = props.product;
+    const { img, name, seller, price, stock , key} = props.product;
     return (
         <div className="product">
 
@@ -13,7 +14,8 @@ function Product(props) {
                 <img src={img} alt="" />
             </div>
             <div className="details">
-                <h4 className="product-name">{name}</h4>
+                {/* add product details routing */}
+                <h4 className="product-name"><Link to={"/product/" + key}>{name}</Link></h4>
                 <br />
                 <p><small>by: {seller}</small></p>
                 <p>Price: ${price}</p>

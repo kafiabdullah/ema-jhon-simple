@@ -19,7 +19,7 @@ const Shop = () => {
 
 
 
-        <div className="shop-container">
+        <div className="shop-container container">
 
 
             <div className="product-container">
