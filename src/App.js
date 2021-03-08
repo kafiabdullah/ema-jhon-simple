@@ -8,17 +8,32 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Review from './components/Review/Review';
+import Inventory from './components/Inventory/Inventory';
 
 
 
 function App() {
   return (
-   
-      <div className="App">
+
+    <div className="App">
       <Header></Header>
-      <Shop></Shop>
+      <Router>
+        <Switch>
+          <Route path="/shop">
+            <Shop></Shop>
+          </Route>
+          <Route path="/review">
+            <Review></Review>
+          </Route>
+          <Route path="/inventory"> 
+            <Inventory></Inventory>
+          </Route>
+        </Switch>
+      </Router>
+
     </div>
-  
+
   );
 }
 
