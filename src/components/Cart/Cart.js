@@ -10,7 +10,8 @@ const Cart = (props) => {
     let totalPrice = 0;
     for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
-        totalPrice = totalPrice + product.price;
+        totalPrice = totalPrice + product.price * product.quantity;
+        console.log(totalPrice);
 
     }
     // shipping cost
@@ -45,6 +46,9 @@ const Cart = (props) => {
             <Link to="/review">
             <button className="buy-btn">Review Order</button>
             </Link>
+            {
+                props.children
+            }
         </div>
     );
 };

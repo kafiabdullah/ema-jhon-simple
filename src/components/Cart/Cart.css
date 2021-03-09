@@ -1,3 +1,4 @@
-.cart-details .buy-btn h2, h4{
+.cart-details{
     text-align: center;
+    align-items: center;
 }
