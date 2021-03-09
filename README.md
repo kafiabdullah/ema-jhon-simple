@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+# Live link of this project: https://elated-hypatia-fbbfcd.netlify.app/shop
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
