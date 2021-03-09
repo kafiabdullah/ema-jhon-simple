@@ -12,7 +12,7 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
     const [products, setProducts] = useState(first10);
     const handleAddProduct = (product) => {
-        console.log("product added", product);
+        // console.log("product added", product);
         const newCart = [...cart, product];
         setCart(newCart);
         // add database to shop component
