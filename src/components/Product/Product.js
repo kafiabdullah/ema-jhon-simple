@@ -15,7 +15,7 @@ function Product(props) {
             </div>
             <div className="details">
                 {/* add product details routing */}
-                <h4 className="product-name"><Link to={"/product/" + key}>{name}</Link></h4>
+                <h4 className="product-name"><Link to={"/product/" + key} className="product-link">{name}</Link></h4>
                 <br />
                 <p><small>by: {seller}</small></p>
                 <p>Price: ${price}</p>

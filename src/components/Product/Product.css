@@ -13,6 +13,11 @@
 .product-name{
     color: blue;
     font-weight: 400;
+    
+}
+.product-link{
+    text-decoration: none;
+    color: inherit;
 }
 .buy-btn{
     background-color: gold;
