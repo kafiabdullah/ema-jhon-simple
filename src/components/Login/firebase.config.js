@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCNGP232rTMCsdGr9VuCGMBym1cbPqzeKg",
-    authDomain: "fir-auth-recap-26e18.firebaseapp.com",
-    projectId: "fir-auth-recap-26e18",
-    storageBucket: "fir-auth-recap-26e18.appspot.com",
-    messagingSenderId: "970654708719",
-    appId: "1:970654708719:web:92a35d775fda039ff17c1a"
+    apiKey: "AIzaSyDMH5CgmP16y4Hw4yuDp5F8RHmjwDfVtVU",
+    authDomain: "ema-jhon-simple-35b41.firebaseapp.com",
+    projectId: "ema-jhon-simple-35b41",
+    storageBucket: "ema-jhon-simple-35b41.appspot.com",
+    messagingSenderId: "714537309747",
+    appId: "1:714537309747:web:68c429f3e30330a0fef546"
 };
 
 export default firebaseConfig;

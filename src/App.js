@@ -17,18 +17,21 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config'
 import Shipment from './components/Shipment/Shipment';
 import Login from './components/Login/Login';
+import { createContext, useState } from 'react';
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
   firebase.app(); // if already initialized, use that one
 }
 
-
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
 
-    <div className="App">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <h2>Email: {loggedInUser.email}</h2>
       <Header></Header>
       <Router>
         <Switch>
@@ -59,7 +62,7 @@ function App() {
         </Switch>
       </Router>
 
-    </div>
+    </UserContext.Provider>
 
   );
 }
