@@ -12,6 +12,9 @@ import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import ProductDetail from './components/PorductDetail/ProductDetail';
+import firebase from "firebase/app";
+import "firebase/auth";
+
 
 
 
