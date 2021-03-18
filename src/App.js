@@ -14,7 +14,12 @@ import NotFound from './components/NotFound/NotFound';
 import ProductDetail from './components/PorductDetail/ProductDetail';
 import firebase from "firebase/app";
 import "firebase/auth";
-
+import firebaseConfig from './firebase.config'
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 
 
 
