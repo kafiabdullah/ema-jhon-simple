@@ -18,6 +18,7 @@ import firebaseConfig from './firebase.config'
 import Shipment from './components/Shipment/Shipment';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
@@ -41,16 +42,16 @@ function App() {
           <Route path="/review">
             <Review></Review>
           </Route>
-          <Route path="/inventory"> 
+          <PrivateRoute path="/inventory">
             <Inventory></Inventory>
-          </Route>
-          <Route path="/shipment"> 
+          </PrivateRoute>
+          <PrivateRoute path="/shipment">
             <Shipment></Shipment>
-          </Route>
-          <Route path="/login"> 
+          </PrivateRoute>
+          <Route path="/login">
             <Login></Login>
           </Route>
-        <Route exact path="/">
+          <Route exact path="/">
             <Shop></Shop>
           </Route>
           <Route path="/product/:productKey">
