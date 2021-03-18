@@ -4,7 +4,13 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { useContext, useState } from 'react';
 import { UserContext } from '../../App';
-firebase.initializeApp(firebaseConfig);
+import { useHistory, useLocation } from 'react-router';
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+} else {
+    firebase.app(); // if already initialized, use that one
+}
 
 
 function Login() {
@@ -20,8 +26,11 @@ function Login() {
         email: '',
         photo: ''
     });
-    
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
 
 
     const handleSignIn = () => {
@@ -105,7 +114,7 @@ function Login() {
                     setUser(newUserInfo);
 
                     updateUserName(user.name)
-                    setLoggedInUser(newUserInfo); 
+                    setLoggedInUser(newUserInfo);
                     // ...
                 })
                 .catch((error) => {
@@ -126,6 +135,9 @@ function Login() {
                     newUserInfo.error = ' ';
                     newUserInfo.success = true;
                     setUser(newUserInfo);
+                    setLoggedInUser(newUserInfo);
+                    history.replace(from);
+
                     // ...
                 })
                 .catch((error) => {
@@ -200,10 +212,7 @@ function Login() {
                 </div>
             }
             <h1>Our Authentication system</h1>
-            {/* <p>name: {user.name}</p>
-      <p>email: {user.email}</p>
-      <p>password: {user.password}</p> */}
-            {/* check new user sign in */}
+
             <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
             <label htmlFor="newUser">New User SignUp</label>
 
@@ -214,8 +223,11 @@ function Login() {
 
                 }
                 <br />
-                <input type="email" onBlur={handleBlur} required name="email" id="" placeholder="enter your email" /> <br />
-                <input type="password" onBlur={handleBlur} required name="password" placeholder="enter your password" id="" /> <br />
+                <input type="email" onBlur={handleBlur} required name="email" id="" placeholder="enter your email" />
+                <br />
+                <br />
+                <input type="password" onBlur={handleBlur} required name="password" placeholder="enter your password" id="" />
+                <br /><br />
                 <input type="submit" name="signup" value={newUser ? 'Sign Up' : 'Sign In'} />
             </form>
             <p style={{ color: 'red' }}>{user.error}</p>
