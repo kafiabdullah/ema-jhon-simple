@@ -15,6 +15,8 @@ import ProductDetail from './components/PorductDetail/ProductDetail';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config'
+import Shipment from './components/Shipment/Shipment';
+import Login from './components/Login/Login';
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
@@ -38,6 +40,12 @@ function App() {
           </Route>
           <Route path="/inventory"> 
             <Inventory></Inventory>
+          </Route>
+          <Route path="/shipment"> 
+            <Shipment></Shipment>
+          </Route>
+          <Route path="/login"> 
+            <Login></Login>
           </Route>
         <Route exact path="/">
             <Shop></Shop>
