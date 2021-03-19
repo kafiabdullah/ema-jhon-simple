@@ -45,6 +45,7 @@ function Login() {
                 }
                 console.log(displayName, email, photoURL);
                 setUser(signedInUser);
+                setLoggedInUser(signedInUser);
             })
             .catch(err => {
                 console.log(err);
